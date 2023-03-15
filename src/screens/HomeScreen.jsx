@@ -9,14 +9,21 @@ export default function HomeScreen({ navigation }){
       style={styles.container}
     >
       <Text>Essa é a Home Screen</Text>
+      <br />
       <Button 
         mode="contained"
         onPress={() => {navigation.navigate("AboutScreen")}}
       >Veja o sobre</Button>
+      <br />
       <Button 
         mode="contained"
         onPress={() => {navigation.navigate("TakagiScreen")}}
       >cuidado</Button>
+      <br />
+      <Button 
+        mode="contained"
+        onPress={() => {navigation.navigate("LoginScreen")}}
+      >Login</Button>
     </View>
   )
 }
