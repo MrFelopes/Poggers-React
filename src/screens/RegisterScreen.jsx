@@ -16,9 +16,25 @@ export default function RegisterScreen(){
     createUserWithEmailAndPassword(auth, email, senha)
     .then((userCredential) => {
       console.log("Usuário logado com sucesso!");
+      navigation.navigate("LoginScreen");
     }).catch((error) => {
       console.log("Erro ao logar usuário! ", error);
+      const errorCode = error.code;
+
+    if (errorCode === "auth/weak-password") {
+      alert("A senha é muito fraca.");
+    }
+
+    if (errorCode === "auth/invalid-email") {
+      alert("O e-mail é inválido.");
+    }
+
+    if (errorCode === "auth/email-already-in-use") {
+      alert("O e-mail já está em uso.");
+    }
     })
+
+    
   }
 
   return(
