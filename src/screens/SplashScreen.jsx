@@ -4,7 +4,7 @@ import styles from "../utils/styles";
 
 export default function SplashScreen({ navigation }){
     setTimeout(() => {
-        navigation.navigate("HomeScreen"); 
+        navigation.navigate("TabsNavigation"); 
     }, 3000);
     
 

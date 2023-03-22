@@ -24,6 +24,10 @@ export default function HomeScreen({ navigation }){
         mode="contained"
         onPress={() => {navigation.navigate("LoginScreen")}}
       >Login</Button>
+      <Button 
+        mode="contained"
+        onPress={() => {navigation.navigate("RegisterScreen")}}
+      >Register</Button>
     </View>
   )
 }
