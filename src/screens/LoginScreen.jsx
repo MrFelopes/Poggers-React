@@ -15,7 +15,7 @@ export default function LoginScreen({ navigation }){
     .then((userCredential) => {
       const user = userCredential.user;
       alert("Usuário logado com sucesso!");
-      navigation.navigate("TakagiScreen");
+      navigation.navigate("HomeScreen");
     })
     .catch((error) => {
       const errorCode = error.code;

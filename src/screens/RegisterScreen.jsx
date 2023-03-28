@@ -15,7 +15,7 @@ export default function RegisterScreen(){
   function handleRegister(){
     createUserWithEmailAndPassword(auth, email, senha)
     .then((userCredential) => {
-      console.log("Usuário logado com sucesso!");
+      alert("Usuário logado com sucesso!");
       navigation.navigate("LoginScreen");
     }).catch((error) => {
       console.log("Erro ao logar usuário! ", error);

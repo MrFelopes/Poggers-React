@@ -8,6 +8,7 @@
   import PoggersScreen from "./screens/PoggersScreen";
   import RegisterScreen from "./screens/RegisterScreen";
   import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import FetchNews from "./screens/FetchNews";
 
   const Stack = createNativeStackNavigator();
 
@@ -100,6 +101,13 @@
           component={PoggersScreen}
           options={{
             title: "tela do poggers",
+          }}
+          />
+        <tabs.Screen
+          name="FetchNews"
+          component={FetchNews}
+          options={{
+            title: "Fetch News",
           }}
         />
       </tabs.Navigator>
