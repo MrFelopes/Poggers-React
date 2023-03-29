@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flexDirection:'column', gap: 10
     }
+    
 })
 
 export default styles

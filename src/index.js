@@ -9,6 +9,7 @@
   import RegisterScreen from "./screens/RegisterScreen";
   import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import FetchNews from "./screens/FetchNews";
+import RickMorty from "./screens/RickMorty";
 
   const Stack = createNativeStackNavigator();
 
@@ -108,6 +109,13 @@ import FetchNews from "./screens/FetchNews";
           component={FetchNews}
           options={{
             title: "Fetch News",
+          }}
+        />
+        <tabs.Screen
+          name="Rick and Morty"
+          component={RickMorty}
+          options={{
+            title: "Rick and Morty",
           }}
         />
       </tabs.Navigator>
