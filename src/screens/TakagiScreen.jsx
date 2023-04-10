@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import { Button, Text } from "react-native-paper";
-import styles from "../utils/styles";
+import { styles } from "../utils/styles";
 
 export default function TakagiScreen({ navigation }){
 
