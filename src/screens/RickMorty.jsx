@@ -23,7 +23,7 @@ export default function RickMorty() {
       .then((dataJson) => setData(dataJson.results))
       // caso ocorra erros eu mostro o erro no console
       .catch((error) => {
-        console.log(error);
+        console.log(error); 
       })
   }, [buscaBt.status, buscaBt.gender]);
 
@@ -94,3 +94,5 @@ export default function RickMorty() {
 
   );
 }
+
+// 

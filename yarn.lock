@@ -1350,43 +1350,7 @@
     resolve-from "^5.0.0"
     sucrase "^3.20.0"
 
-<<<<<<< HEAD
-"@expo/ngrok-bin-linux-x64@2.3.40":
-  version "2.3.40"
-  resolved "https://registry.npmjs.org/@expo/ngrok-bin-linux-x64/-/ngrok-bin-linux-x64-2.3.40.tgz"
-  integrity sha512-yOuwpOmMe6RGnk9ninlM7Zg1EiF81ptFOcFmT61PDOA4gK8/ttZKTMkDQiq0DZdcXUyE0HCr83EglJZTnHIzPA==
-
-"@expo/ngrok-bin@2.3.40":
-  version "2.3.40"
-  resolved "https://registry.npmjs.org/@expo/ngrok-bin/-/ngrok-bin-2.3.40.tgz"
-  integrity sha512-40GK1CY1QLPDHSQS7Fd36CJeZgMwtbeezkgp4tzfExVRVtWw30jOBCsM7TBB9IqEmmX7C/XwG47scMQHCnMw8A==
-  optionalDependencies:
-    "@expo/ngrok-bin-darwin-arm64" "2.3.40"
-    "@expo/ngrok-bin-darwin-x64" "2.3.40"
-    "@expo/ngrok-bin-freebsd-ia32" "2.3.40"
-    "@expo/ngrok-bin-freebsd-x64" "2.3.40"
-    "@expo/ngrok-bin-linux-arm" "2.3.40"
-    "@expo/ngrok-bin-linux-arm64" "2.3.40"
-    "@expo/ngrok-bin-linux-ia32" "2.3.40"
-    "@expo/ngrok-bin-linux-x64" "2.3.40"
-    "@expo/ngrok-bin-sunos-x64" "2.3.40"
-    "@expo/ngrok-bin-win32-ia32" "2.3.40"
-    "@expo/ngrok-bin-win32-x64" "2.3.40"
-
-"@expo/ngrok@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.npmjs.org/@expo/ngrok/-/ngrok-4.1.0.tgz"
-  integrity sha512-PrtWxBt/SnOF1jZkf7oWznhEPFrmYKKeJPLVRKnEBd/y4eUYfoiNIXOzflIzhdrMubjWVI+pFuPJ6nkjVL95/Q==
-  dependencies:
-    "@expo/ngrok-bin" "2.3.40"
-    got "^11.5.1"
-    uuid "^3.3.2"
-    yaml "^1.10.0"
-
-"@expo/osascript@^2.0.31", "@expo/osascript@2.0.33":
-=======
 "@expo/osascript@2.0.33", "@expo/osascript@^2.0.31":
->>>>>>> 9fe2efc3e51b44c9d5ea08290fb943ecff51530a
   version "2.0.33"
   resolved "https://registry.npmjs.org/@expo/osascript/-/osascript-2.0.33.tgz"
   integrity sha512-FQinlwHrTlJbntp8a7NAlCKedVXe06Va/0DSLXRO8lZVtgbEMrYYSUZWQNcOlNtc58c2elNph6z9dMOYwSo3JQ==
