@@ -1,27 +1,32 @@
-import { View } from 'react-native';
-import {Text} from 'react-native-paper';
-import { useEffect } from 'react';
-import styles from '../utils/styles';
+import { useEffect, useState } from "react";
+import { ScrollView, View } from "react-native";
+import { Text } from "react-native-paper";
+import { styles } from "../utils/styles";
 
-export default function FetchNews(){
-    function fetchNewsData() {
-        fetch("https://jsonplaceholder.typicode.com/posts")
-        .then((response) => response.json())
-        .then((json) => console.log(json))
-        .catch((error) => console.error(error))
-    }
-    useEffect(() => {
-        fetchNewsData();
-    }, []);
-    return(
-        <View style={styles.container}>
-            <Text>Fetch News</Text>
-            {data.map((item) => (
-                <View key={item.id}>
-                    <Text key={item.id}></Text>
-                    <Text key={item.title}></Text>
-                </View> 
-            ))}
-        </View>
-    )
+export default function FetchNews() {
+  const [data, setData] = useState([]);
+  const [nome, setNome] = useState("Rafael");
+  function fetchNewsData() {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => response.json()) // transforma a informação em JSON
+      .then((json) => setData(json)) // aqui temos o resultado em JSON
+      .catch((error) => console.error(error)); // aqui pegamos o erro
+  }
+  useEffect(() => {
+    fetchNewsData();
+  }, []);
+
+  return (
+    <View style={styles.container}>
+      <ScrollView >
+        <Text>Fetch News {nome}</Text>
+        {data.map((item) => (
+          <View key={item.id}>
+            <Text style={{ fontWeight: "bold" }}>{item.title}</Text>
+            <Text>{item.body}</Text>
+          </View>
+        ))}
+      </ScrollView>
+    </View>
+  );
 }

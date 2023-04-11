@@ -1,7 +1,7 @@
 import { View } from "react-native";
 import React, { useState } from "react";
 import { Button, Paragraph, TextInput } from "react-native-paper";
-import styles from "../utils/styles";
+import { styles } from "../utils/styles";
 import { auth } from "../config/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 

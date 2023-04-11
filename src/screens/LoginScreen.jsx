@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {View} from 'react-native';
 import { TextInput, Text, Button } from 'react-native-paper';
-import styles from "../utils/styles";
+import { styles } from "../utils/styles";
 import { auth } from "../config/firebase";
 import { signInWithEmailAndPassword } from '@firebase/auth';
 
