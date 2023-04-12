@@ -1,107 +1,79 @@
-  import { createNativeStackNavigator } from "@react-navigation/native-stack";
-  import { NavigationContainer } from "@react-navigation/native";
-  import AboutScreen from "./screens/AboutScreen";
-  import HomeScreen from "./screens/HomeScreen";
-  import LoginScreen from "./screens/LoginScreen";
-  import TakagiScreen from "./screens/TakagiScreen";
-  import SplashScreen from "./screens/SplashScreen";
-  import PoggersScreen from "./screens/PoggersScreen";
-  import RegisterScreen from "./screens/RegisterScreen";
-  import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
-  const Stack = createNativeStackNavigator();
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import FetchNews from "./screens/FetchNews";
+import HomeScreen from "./screens/HomeScreen";
+import LoginScreen from "./screens/LoginScreen";
+import RegisterScreen from "./screens/RegisterScreen";
+import RickMorty from "./screens/RickMorty";
+import RMGameScreen from "./screens/RMGameScreen";
+import SplashScreen from "./screens/SplashScreen";
 
-  export default function RootNavigation() {
-    return (
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-              name="TabsNavigator"
-              component={TabsNavigation}
-              options={{
-                  headerShown: false
-              }}
-          />
-          <Stack.Screen
-            name="HomeScreen"
-            component={HomeScreen}
-            options={{
-              title: "Tela Inicial",
-            }}
-          />
-          <Stack.Screen
-            name="AboutScreen"
-            component={AboutScreen}
-            options={{
-              headerTitle: "Tela de Sobre",
-            }}
-          />
-          <Stack.Screen
-            name="TakagiScreen"
-            component={TakagiScreen}
-            options={{
-              headerTitle: "Tela de Sobre",
-            }}
-          />
-          <Stack.Screen
-            name="LoginScreen"
-            component={LoginScreen}
-            options={{
-              headerTitle: "Tela de Login",
-            }}
-          />
-          <Stack.Screen
-            name="RegisterScreen"
-            component={RegisterScreen}
-            options={{
-              headerTitle: "Tela de Registro",
-            }}
-          />
-          <Stack.Screen
-            name="SplashScreen"
-            component={SplashScreen}
-            options={{
-              headerTitle: "Tela Splash",
-            }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    );
-  }
+const Stack = createNativeStackNavigator();
 
-  const tabs = createMaterialBottomTabNavigator();
-
-  function TabsNavigation() {
-    return (
-      <tabs.Navigator>
-        <tabs.Screen
-          name="HomeScreen"
-          component={HomeScreen}
+export default function RootNavigation() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="SplashScreen"
+          component={SplashScreen}
           options={{
-            title: "Tela Inicial",
+            headerShown: false,
           }}
         />
-        <tabs.Screen
-          name="LoginScreen"
-          component={LoginScreen}
+        <Stack.Screen
+          name="TabsNavigation"
+          component={TabsNavigation}
           options={{
-            title: "Tela de login",
+            headerShown: false,
           }}
         />
-        <tabs.Screen
-          name="TakagiScreen"
-          component={TakagiScreen}
-          options={{
-            title: "EU AMO TAKAGI",
-          }}
-        />
-        <tabs.Screen
-          name="PoggersScreen"
-          component={PoggersScreen}
-          options={{
-            title: "tela do poggers",
-          }}
-        />
-      </tabs.Navigator>
-    );
-  }
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+const Tabs = createMaterialBottomTabNavigator();
+
+function TabsNavigation() {
+  return (
+    <Tabs.Navigator initialRouteName="HomeScreen">
+      <Tabs.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: "Inicio",
+        }}
+      />
+      <Tabs.Screen
+        name="LoginScreen"
+        component={LoginScreen}
+        options={{
+          tabBarLabel: "Faça seu Login",
+        }}
+      />
+      <Tabs.Screen
+        name="RegisterScreen"
+        component={RegisterScreen}
+      />
+      <Tabs.Screen
+        name="FetchNews"
+        component={FetchNews}
+
+      />
+      <Tabs.Screen
+        name="RickMorty"
+        component={RickMorty}
+
+      />
+      <Tabs.Screen
+        name="RMGameScreen"
+        component={RMGameScreen}
+
+      />
+    </Tabs.Navigator>
+  );
+}
+

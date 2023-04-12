@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {View} from 'react-native';
 import { TextInput, Text, Button } from 'react-native-paper';
-import styles from "../utils/styles";
+import { styles } from "../utils/styles";
 import { auth } from "../config/firebase";
 import { signInWithEmailAndPassword } from '@firebase/auth';
 
@@ -15,6 +15,7 @@ export default function LoginScreen({ navigation }){
     .then((userCredential) => {
       const user = userCredential.user;
       alert("Usuário logado com sucesso!");
+      navigation.navigate("HomeScreen");
     })
     .catch((error) => {
       const errorCode = error.code;

@@ -1,7 +1,7 @@
 import { View } from "react-native";
 import React, { useState } from "react";
 import { Button, Paragraph, TextInput } from "react-native-paper";
-import styles from "../utils/styles";
+import { styles } from "../utils/styles";
 import { auth } from "../config/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
@@ -15,7 +15,7 @@ export default function RegisterScreen(){
   function handleRegister(){
     createUserWithEmailAndPassword(auth, email, senha)
     .then((userCredential) => {
-      console.log("Usuário logado com sucesso!");
+      alert("Usuário logado com sucesso!");
       navigation.navigate("LoginScreen");
     }).catch((error) => {
       console.log("Erro ao logar usuário! ", error);
