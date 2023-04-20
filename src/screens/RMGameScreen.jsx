@@ -38,7 +38,6 @@ export default function RMGameScreen() {
             setResultado('Você acertou!');
             setTimeout(() => {
                 setPoints (points + 1);
-                buscaPersonagemAleatorio();
                 setIsLoading(false);
             }, 1000);
 
@@ -46,7 +45,6 @@ export default function RMGameScreen() {
             setResultado('Você acertou!');
             setTimeout(() => {
                 setPoints (points + 1);
-                buscaPersonagemAleatorio();
                 setIsLoading(false);
             }, 1000);
         }
@@ -55,7 +53,6 @@ export default function RMGameScreen() {
             setResultado ('Você errou!');
             setTimeout(() => {
                 setIsLoading(false);
-                buscaPersonagemAleatorio();
             }, 1000);
             setChances (chances - 1);
 
