@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Image, View } from "react-native";
 import { Button, Text } from "react-native-paper";
 import { styles } from "../utils/styles";
+import { Video, ResizeMode } from 'expo-av';
 
 export default function RMGameScreen() {
     const [personagem, setPersonagem] = useState(null);
@@ -12,6 +13,8 @@ export default function RMGameScreen() {
     const [chances, setChances] = useState(3);
     const [pulos, setPulos] = useState(3);
     const [resultado, setResultado] = useState('');
+    const video = React.useRef(null);
+    const [status, setStatus] = React.useState({});
 
     useEffect (() => {
         fetch("https://rickandmortyapi.com/api/character")
@@ -120,6 +123,25 @@ export default function RMGameScreen() {
 
         return (
             <View style={styles.container}>
+                <Video
+                    ref={video}
+                    style={styles.video}
+                    source={{
+                        uri: '../utils/video-mascaco.mp4',
+                    }}
+                    useNativeControls
+                    resizeMode={ResizeMode.CONTAIN}
+                    isLooping
+                    onPlaybackStatusUpdate={status => setStatus(() => status)}
+                />
+                    <View style={styles.buttons}>
+                        <Button
+                        title={status.isPlaying ? 'Pause' : 'Play'}
+                        onPress={() =>
+                            status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
+                        }
+                        />
+                    </View>
                     <View style={{border: '5px solid black', borderRadius: 10, padding: 20, alignItems: 'center'}}>
                     <Text style={{fontSize: 30, paddingTop: 10, paddingBottom: 10}}>Este personagem está vivo?</Text>
                     <Image
